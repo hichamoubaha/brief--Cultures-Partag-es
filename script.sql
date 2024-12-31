@@ -13,3 +13,10 @@ CREATE TABLE utilisateurs (
     role ENUM('admin', 'auteur', 'utilisateur') NOT NULL,
     date_creation TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+-- Table categories
+CREATE TABLE categories (
+    id_categorie INT AUTO_INCREMENT PRIMARY KEY,
+    nom_categorie VARCHAR(50) NOT NULL UNIQUE,
+    date_creation TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
