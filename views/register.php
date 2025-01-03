@@ -7,7 +7,7 @@
         </h1>
         
         <div class="bg-white py-8 px-6 shadow-xl rounded-2xl">
-            <form action="index.php?page=register" method="POST" class="space-y-6">
+            <form id="registrationForm" action="index.php?page=register" method="POST" class="space-y-6">
                 <div>
                     <label for="nom_utilisateur" class="block text-sm font-medium text-gray-700">
                         Nom d'utilisateur
@@ -84,3 +84,47 @@
         </div>
     </div>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    document.getElementById("registrationForm").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent form submission
+
+        // Get form values
+        const nomUtilisateur = document.getElementById("nom_utilisateur").value;
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+
+        // Define validation regex
+        const usernameRegex = /^[a-zA-Z]+$/; // Letters only
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Standard email format
+        const passwordRegex = /^.{6,}$/; // At least 6 characters
+
+        // Validate inputs
+        if (!usernameRegex.test(nomUtilisateur)) {
+            Swal.fire("Erreur", "Le nom d'utilisateur doit contenir uniquement des lettres.", "error");
+            return;
+        }
+
+        if (!emailRegex.test(email)) {
+            Swal.fire("Erreur", "Veuillez entrer une adresse email valide.", "error");
+            return;
+        }
+
+        if (!passwordRegex.test(password)) {
+            Swal.fire("Erreur", "Le mot de passe doit contenir au moins 6 caractères.", "error");
+            return;
+        }
+
+        // If validation passes
+        Swal.fire({
+            title: "Succès",
+            text: "Inscription réussie!",
+            icon: "success",
+            confirmButtonText: "OK"
+        }).then(() => {
+            this.submit(); // Submit the form
+        });
+    });
+</script>
+</body>
+</html>
