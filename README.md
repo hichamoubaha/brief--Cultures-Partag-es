@@ -1,7 +1,6 @@
-# Project Title
+# Cultures Partagées
 
 ## Overview
-Provide a brief description of your project, including its purpose and goals. For example:
 
 This platform aims to promote art and culture by providing users with a space to publish articles on topics such as painting, music, literature, and more. It features an intuitive user interface and an administrative dashboard for efficient management of users, categories, and articles.
 
