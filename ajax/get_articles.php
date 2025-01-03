@@ -53,4 +53,3 @@ echo json_encode([
     'articles' => $articles_html,
     'pagination' => $pagination_html
 ]);
-
