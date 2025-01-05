@@ -95,9 +95,9 @@
         const password = document.getElementById("password").value;
 
         // Define validation regex
-        const usernameRegex = /^[a-zA-Z]+$/; // Letters only
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Standard email format
-        const passwordRegex = /^.{6,}$/; // At least 6 characters
+        const usernameRegex = /^[a-zA-Z]+$/;
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
+        const passwordRegex = /^.{6,}$/; 
 
         // Validate inputs
         if (!usernameRegex.test(nomUtilisateur)) {
